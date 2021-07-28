@@ -1,0 +1,35 @@
+.custom__modal__container {
+  display: block;
+  position: fixed;
+  top: 10%;
+  left: 12%;
+  width: 75vw;
+  z-index: 7000;
+  box-sizing: border-box;
+  padding: 50px;
+  background-color: black;
+  color: white;
+  h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin: 0px;
+  }
+  @media (max-width: 1200px) {
+    width: 90vw;
+    padding: 10px;
+    top: 3%;
+    left: 5%;
+  }
+}
+.custom__modal__footer {
+  text-align: right;
+  button {
+    margin-right: 10px;
+    background-color: white;
+    color: black;
+  }
+  button:hover {
+    color: white;
+    background-color: #1c1b1b;
+  }
+}

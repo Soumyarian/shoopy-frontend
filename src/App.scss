@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
+
+$base-color: #efefef;
+$text-color: #1c1b1b;
+$border: 1px solid black;
+$sans: "Open Sans", sans-serif;
+$serif: "PT Serif", serif;
+
+.App {
+  background-color: $base-color;
+  color: $text-color;
+  width: 100vw;
+  font-family: $sans;
+  font-size: 16px;
+}
+
+button,
+.action__link {
+  border: none;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  border: 1px solid black;
+  background-color: #1c1b1b;
+  padding: 1em 2em;
+  font-weight: bold;
+  color: #efefef;
+  text-transform: uppercase;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+    background-color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+button:hover,
+.action__link:hover {
+  color: #1c1b1b;
+  background-color: #efefef;
+}
+
+a {
+  color: $text-color;
+}
+
+h1 {
+  font-family: $serif;
+  font-size: 8rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 1s;
+  span {
+    display: block;
+    transform: translateY(100%);
+  }
+  @media (max-width: 992px) {
+    font-size: 6rem;
+  }
+  @media (max-width: 567px) {
+    font-size: 4rem;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0px 30px;
+  margin: 0px auto;
+  @media (max-width: 567px) {
+    max-width: 90vw;
+    padding: 0px;
+  }
+  @media (min-width: 567px) {
+    max-width: 567px;
+  }
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media (min-width: 992px) {
+    max-width: 992px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+  }
+}
+
+.containe_fluid {
+  width: 100%;
+}
+
+.c__lines {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2000;
+  .c__lines__line {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    background-color: black;
+    height: 100%;
+    z-index: 200;
+    &:first-child {
+      left: 10px;
+    }
+    &:last-child {
+      right: 10px;
+    }
+    @media (min-width: 567px) {
+      &:first-child {
+        left: 50px;
+      }
+      &:last-child {
+        right: 50px;
+      }
+    }
+    @media (min-width: 1200px) {
+      &:first-child {
+        left: 60px;
+      }
+      &:last-child {
+        right: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.footer__wrapper {
+  position: relative;
+  border-top: 1px solid black;
+}
+
+.footer {
+  width: 100%;
+  display: grid;
+  padding: 99px 0px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "PT Serif", serif;
+  }
+  .footer__item {
+    display: block;
+  }
+  .footer__item:last-child {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+}
+.footer__end__container {
+  width: 100%;
+  border-top: 1px solid black;
+  padding: 10px 0px;
+  text-align: center;
+}

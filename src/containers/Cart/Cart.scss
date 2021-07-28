@@ -1,0 +1,168 @@
+.cart__container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  .cart__header {
+    padding-top: 100px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    h1 {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      span {
+        display: block;
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
+  }
+}
+.cart__content {
+  margin-top: 60px;
+  width: 100%;
+  padding: 0px 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  @media (max-width: 992px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 567px) {
+    padding: 0px 20px;
+  }
+}
+
+.cart__subtotal__container {
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  .cart__subtotal {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+}
+
+.flex__container {
+  display: flex;
+  width: 100%;
+  margin: 0px auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  @media (max-width: 992px) {
+    border-bottom: 1px solid black;
+  }
+  &:first-child {
+    @media (max-width: 992px) {
+      border-top: 1px solid black;
+    }
+  }
+}
+
+.cart__item__container {
+  width: 100%;
+  margin: 5px 0px;
+  background-color: white;
+  text-transform: uppercase;
+  border: 1px solid black;
+  @media (max-width: 992px) {
+    border-bottom: 0px;
+  }
+  table {
+    width: 100%;
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .cart__item__partOne {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    .cart__item__partTwo {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      border: 0px;
+      padding: 0px;
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+    }
+    .cart__item__remove {
+      padding: 1.5em 0em 0em 1.5em;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .cart__item__image {
+      padding: 2em 0em;
+      img {
+        width: 100px;
+      }
+    }
+    .cart__item__name {
+      width: 100%;
+      h2 {
+        font-family: "PT Serif", serif;
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+      @media (max-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .cart__item__quantity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        padding: 5px 10px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+      div {
+        margin: 0px 10px;
+        font-size: 2rem;
+      }
+    }
+    .cart__item__price {
+      font-size: 2rem;
+    }
+  }
+}
+
+.order__container {
+  margin: 30px 0px;
+  position: relative;
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &:first-child {
+    margin-top: 0px;
+  }
+}

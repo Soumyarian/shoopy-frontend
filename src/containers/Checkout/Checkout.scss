@@ -1,0 +1,147 @@
+.checkout {
+  width: 100%;
+  position: relative;
+}
+.chcekout__container {
+  padding-top: 100px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  h1 {
+    padding-bottom: 20px;
+  }
+}
+.checkout__steps__container {
+  border-top: 1px solid black;
+  padding: 50px 100px 0px;
+  @media (max-width: 568px) {
+    padding: 50px 20px 0px;
+  }
+}
+
+.checkout__steps {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  h1 {
+    font-size: 4rem;
+    justify-content: flex-start;
+  }
+}
+.checkout__step__login {
+  text-transform: uppercase;
+}
+
+.checkout__step__address {
+  padding-top: 50px;
+  .address__container {
+    // padding-left: 50px;
+    .address {
+      position: relative;
+      margin: 10px 0px;
+      padding: 10px;
+      font-size: 1.5rem;
+      background-color: white;
+      display: flex;
+      border: 1px solid black;
+      .address__input__container {
+        padding-right: 10px;
+      }
+      .address__detail__container {
+        display: flex;
+        flex-direction: column;
+        .address__details__title {
+          font-size: 1.2rem;
+          text-transform: capitalize;
+          span {
+            font-weight: bold;
+            font-family: "PT Serif", serif;
+            text-transform: uppercase;
+          }
+        }
+        .address__details__primary {
+          display: flex;
+          flex-direction: column;
+        }
+        .address__details__secondary {
+          font-size: 1.2rem;
+          span:first-child {
+            text-transform: uppercase;
+
+            font-weight: bold;
+            font-family: "PT Serif", serif;
+          }
+        }
+        .address__details__submit {
+          margin-top: 10px 0px;
+          button {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+.address__selected {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  font-size: 3rem;
+}
+.checkout__step__orderSummery {
+  padding-top: 50px;
+}
+
+.orderSummery__container,
+.orderSummery__total {
+  width: 100%;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.orderSummery__container {
+  h2 {
+    padding-bottom: 10px;
+    font-family: "PT Serif", serif;
+  }
+  h5 {
+    text-transform: capitalize;
+    padding: 5px;
+  }
+}
+
+.checkout__step__payment {
+  padding: 50px 0px;
+  input {
+    margin-bottom: 20px;
+  }
+}
+
+.address__form__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.address__form__column {
+  width: auto;
+  padding: 10px;
+  &:last-child {
+    @media (max-width: 992px) {
+      padding-top: 0px;
+    }
+  }
+  &:first-child {
+    @media (max-width: 992px) {
+      padding-bottom: 0px;
+    }
+  }
+}

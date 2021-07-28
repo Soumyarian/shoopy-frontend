@@ -1,0 +1,37 @@
+.product__list_page__container {
+  position: relative;
+  width: 100%;
+
+  .product__list__header {
+    border-bottom: 1px solid black;
+    h1 {
+      padding-top: 100px;
+    }
+  }
+  .product__list__container {
+    padding: 30px;
+    .cart__item__container {
+      p {
+        @media (max-width: 992px) {
+          display: none;
+        }
+      }
+    }
+    .cart__item__name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .flex__container {
+        border: 0;
+      }
+      .product__rating {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        span {
+          padding: 0px 5px;
+        }
+      }
+    }
+  }
+}

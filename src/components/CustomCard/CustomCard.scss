@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+a:hover {
+  color: black;
+}
+.card_ {
+  width: 100%;
+  margin: 10px 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card__image__container {
+    padding: 10px 0px;
+    background-color: white;
+    display: block;
+    width: 150px;
+    text-align: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @media (max-width: 567px) {
+      width: 100px;
+    }
+  }
+  .card__details {
+    .card__title {
+      font-size: 2.1rem;
+      text-transform: uppercase;
+      font-family: "PT Serif", serif;
+    }
+    .card__description {
+      font-size: 1.3rem;
+    }
+  }
+}

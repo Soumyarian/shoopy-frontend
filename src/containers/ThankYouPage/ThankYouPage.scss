@@ -1,0 +1,22 @@
+.thankyou__page__container {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+.thankyou__content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .desc__container {
+    overflow: hidden;
+    h3 {
+      padding: 10px 0px;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+}

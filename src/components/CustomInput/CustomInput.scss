@@ -1,0 +1,32 @@
+.custom__input__container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  p {
+    margin: 0;
+    color: red;
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  .custom__input {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 10px;
+    align-items: center;
+    text-align: left;
+    label {
+      text-transform: uppercase;
+      font-family: "PT Serif", serif;
+      font-size: 1.2rem;
+    }
+    input {
+      font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 992px) {
+    padding: 15px 0px;
+  }
+  @media (max-width: 567px) {
+    padding: 10px 0px;
+  }
+}
