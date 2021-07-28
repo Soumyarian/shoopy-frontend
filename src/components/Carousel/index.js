@@ -20,6 +20,8 @@ const Carousel = (props) => {
         init();
         animate();
         return () => {
+            plane.material.dispose();
+            plane.geometry.dispose();
             renderer.dispose();
             window.removeEventListener("resize", onWindowResize)
         }

@@ -34,51 +34,62 @@ const Prod = (props) => {
             </h1>
           </div>
         </div>
-        <div className="container product__list__container">
-          {allProducts?.products?.map((prod, idx) => {
-            return (
-              <Link key={idx} to={`/${prod.slug}/${prod._id}/p`}>
-                <div className="cart__item__container">
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td className="cart__item__partOne">
-                          <div className="cart__item__image">
-                            <img
-                              src={`${prod.productPictures[0].img}`}
-                              alt=""
-                            />
-                          </div>
-                        </td>
-                        <td className="cart__item__partTwo flex__container">
-                          <div className="flex__container">
-                            <div className="cart__item__name">
-                              <div>
-                                <h2>{prod.name}</h2>
-                                <p>
-                                  {prod.description}
-                                </p>
+        <div className="container">
+          <div className="product__list__container">
+            {allProducts?.products?.map((prod, idx) => {
+              return (
+                <Link key={idx} to={`/${prod.slug}/${prod._id}/p`}>
+                  <div className="cart__content">
+                    <div className="cart__item__container">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td className="cart__item__partOne">
+                              <div className="cart__item__image">
+                                <img
+                                  src={`${prod.productPictures[0].img}`}
+                                  alt=""
+                                />
                               </div>
-                              <div className="flex__container">
-                                <div className="product__rating">
-                                  <span>4</span>
-                                  <BiStar />
-                                </div>
-                                <div className="cart__item__price">
-                                  <BiRupee />
-                                  {prod.price}
+                            </td>
+                            <td className="cart__item__partTwo">
+                              <div className="itemm__data">
+                                <div className="item__name">
+                                  <h2>{prod.name}</h2>
+                                  <p>
+                                    {/* {prod.description} */}
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatibus modi mollitia
+                                    assumenda sequi cumque voluptatum,
+                                    necessitatibus excepturi quas, ut, rem optio
+                                    id similique ducimus delectus tempore vel.
+                                    Error vel pariatur architecto sit possimus
+                                    ipsa. Cumque architecto quos assumenda ipsum
+                                    iure optio porro! Dolores dignissimos eum
+                                    sint ullam molestias vero officiis.
+                                  </p>
+                                  <div className="item__desc">
+                                    <div className="product__rating">
+                                      <span>4</span>
+                                      <BiStar />
+                                    </div>
+                                    <div className="cart__item__price">
+                                      <BiRupee />
+                                      {prod.price}
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </Link>
-            );
-          })}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

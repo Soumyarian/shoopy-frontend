@@ -5,7 +5,7 @@ import { addToCart, getProductById } from "../../store/actions";
 import { MdThumbUp, MdStar } from "react-icons/md";
 import { BiRupee } from "react-icons/bi";
 import "./ProductDetails.scss";
-import Carousel from './../../components/Carousel'
+import Carousel from "./../../components/Carousel";
 
 const ProductDetails = (props) => {
   const dispatch = useDispatch();
@@ -31,17 +31,10 @@ const ProductDetails = (props) => {
           <div className="c__lines__line"></div>
         </div>
         <div className="product__details">
-          <div className="banner__image_container">
-            {/* {products.detailedProduct.productPictures && (
-              <img
-                src={`http://localhost:8000/public/${products.detailedProduct.productPictures[0].img}`}
-                alt=""
-              />
-            )} */}
-            {
-              products?.detailedProduct?.productPictures &&
+          <div className="product__image_container">
+            {products?.detailedProduct?.productPictures && (
               <Carousel images={products.detailedProduct.productPictures} />
-            }
+            )}
           </div>
 
           <div className="product__banner">
@@ -68,9 +61,7 @@ const ProductDetails = (props) => {
                 <BiRupee />
                 {products.detailedProduct && products.detailedProduct.price}
               </div>
-              <button onClick={addToCartHandler}>
-                ADD TO CART
-              </button>
+              <button onClick={addToCartHandler}>ADD TO CART</button>
             </div>
           </div>
         </div>

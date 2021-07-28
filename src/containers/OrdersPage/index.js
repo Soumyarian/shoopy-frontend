@@ -5,8 +5,8 @@ import Layout from '../../components/Layout/Layout';
 import CartAndOrderCard from '../../components/CartAndOrderCard';
 
 import { getOrders } from '../../store/actions';
-import { staggerChild } from '../../helpers/animation';
 import "./../Cart/Cart.scss";
+import { staggerChild } from '../../helpers/animation';
 
 const OrderPage = () => {
     const headerRef = useRef();
@@ -14,7 +14,7 @@ const OrderPage = () => {
     const user = useSelector(state => state.user)
     useEffect(() => {
         dispatch(getOrders());
-        staggerChild(headerRef.current.children)
+        staggerChild(headerRef.current.children, false);
     }, [])
     return (
         <Layout>
@@ -36,30 +36,32 @@ const OrderPage = () => {
                         <span>s</span>
                     </h1>
                 </div>
-                <div className="container cart__content">
-                    {
-                        user?.orders?.map(order => {
-                            return (
-                                <div className="order__container">
-                                    {order?.items?.map((item, idx) => {
-                                        return (
-                                            <CartAndOrderCard
-                                                key={idx}
-                                                index={idx + 1}
-                                                orderPage
-                                                orderId={order._id}
-                                                price={item?.payablePrice}
-                                                qty={item?.purchasedQty}
-                                                title={item?.productId?.name}
-                                                paymentStatus={order?.paymentStatus}
-                                                imgName={item?.productId?.productPictures[0]?.img}
-                                            />
-                                        )
-                                    })}
-                                </div>
-                            )
-                        })
-                    }
+                <div className="container">
+                    <div className="cart__content">
+                        {
+                            user?.orders?.map(order => {
+                                return (
+                                    <div className="order__container">
+                                        {order?.items?.map((item, idx) => {
+                                            return (
+                                                <CartAndOrderCard
+                                                    key={idx}
+                                                    index={idx + 1}
+                                                    orderPage
+                                                    orderId={order._id}
+                                                    price={item?.payablePrice}
+                                                    qty={item?.purchasedQty}
+                                                    title={item?.productId?.name}
+                                                    paymentStatus={order?.paymentStatus}
+                                                    imgName={item?.productId?.productPictures[0]?.img}
+                                                />
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
         </Layout>

@@ -289,7 +289,6 @@ class Category extends Component {
                         <div ref={this.reff} className="demo-1__gallery">
                             {this.props?.category?.categories?.map(cat => {
                                 return cat?.categoryImage?.map((image, idx) => {
-                                    console.log(image.img);
                                     return (
                                         <figure
                                             data-link={`/${cat.slug}?cid=${cat._id}&type=${cat.type}`}

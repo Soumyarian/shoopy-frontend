@@ -38,6 +38,21 @@ button:hover,
 a {
   color: $text-color;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0px;
+  margin: 0px;
+  font-weight: normal;
+}
+span {
+  padding: 0px 5px;
+  font-weight: bold;
+}
 
 h1 {
   font-family: $serif;
@@ -52,6 +67,7 @@ h1 {
   span {
     display: block;
     transform: translateY(100%);
+    font-weight: normal;
   }
   @media (max-width: 992px) {
     font-size: 6rem;
@@ -62,18 +78,19 @@ h1 {
 }
 
 .container {
-  width: 100%;
-  padding: 0px 30px;
+  width: auto;
   margin: 0px auto;
   @media (max-width: 567px) {
     max-width: 90vw;
-    padding: 0px;
+    padding: 0px 10px;
   }
   @media (min-width: 567px) {
     max-width: 567px;
+    padding: 0px 20px;
   }
   @media (min-width: 768px) {
     max-width: 768px;
+    padding: 0px 100px;
   }
   @media (min-width: 992px) {
     max-width: 992px;

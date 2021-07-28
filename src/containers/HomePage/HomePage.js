@@ -50,11 +50,11 @@ const HomePage = () => {
     const imageContainerHeight = portfolioRef.current.querySelector(".category__showcase__categories").clientHeight;
     gsap.to(imageCLRef.current, {
       duration: 1.2,
-      y: (imageContainerHeight - clientY) / 6,
+      y: (imageContainerHeight - clientY) / 3,
     })
     gsap.to(imageCSRef.current, {
       duration: 1.5,
-      y: (imageContainerHeight - clientY) / 6,
+      y: (imageContainerHeight - clientY) / 3,
     })
   }
 
@@ -129,12 +129,12 @@ const HomePage = () => {
                   )
                 })
               }
-            </div>
-            <div ref={imageCLRef} className="showcase__image__large">
-              <div ref={imageLRef} className="showcase__image"></div>
-            </div>
-            <div ref={imageCSRef} className="showcase__image__small">
-              <div ref={imageSRef} className="showcase__image">
+              <div ref={imageCLRef} className="showcase__image__large">
+                <div ref={imageLRef} className="showcase__image"></div>
+              </div>
+              <div ref={imageCSRef} className="showcase__image__small">
+                <div ref={imageSRef} className="showcase__image">
+                </div>
               </div>
             </div>
           </section>

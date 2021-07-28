@@ -33,23 +33,25 @@ const Cart = (props) => {
         <div className="cart__header">
           <h1>My Cart</h1>
         </div>
-        <div className="container cart__content">
-          {cart.cartItems &&
-            Object.keys(cart.cartItems).map((key, idx) => {
-              return (
-                <CartAndOrderCard
-                  _id={key}
-                  key={idx}
-                  orderPage={props.orderPage}
-                  imgName={cart.cartItems[key].img}
-                  title={cart.cartItems[key].name}
-                  price={cart.cartItems[key].price}
-                  qty={cart.cartItems[key].quantity}
-                  quantityHandler={quantityHandler}
-                  removeHandler={removeCartItemHandler}
-                />
-              );
-            })}
+        <div style={{ paddingBottom: "10px" }} className="container">
+          <div className="cart__content">
+            {cart.cartItems &&
+              Object.keys(cart.cartItems).map((key, idx) => {
+                return (
+                  <CartAndOrderCard
+                    _id={key}
+                    key={idx}
+                    orderPage={props.orderPage}
+                    imgName={cart.cartItems[key].img}
+                    title={cart.cartItems[key].name}
+                    price={cart.cartItems[key].price}
+                    qty={cart.cartItems[key].quantity}
+                    quantityHandler={quantityHandler}
+                    removeHandler={removeCartItemHandler}
+                  />
+                );
+              })}
+          </div>
           <div className="cart__subtotal__container">
             <h3>Total</h3>
             <div className="cart__subtotal">
@@ -67,7 +69,7 @@ const Cart = (props) => {
                 Price-
                 <span>
                   {Object.keys(cart.cartItems).reduce((price, cur) => {
-                    return price + cart.cartItems[cur].price;
+                    return price + cart.cartItems[cur].price * cart.cartItems[cur].quantity;
                   }, 0)}
                 </span>
               </h3>
@@ -78,7 +80,6 @@ const Cart = (props) => {
                 Place Order
               </button>
             </Link>
-
           </div>
         </div>
       </div>
