@@ -37,7 +37,7 @@ export const CartAndOrderCard = (props) => {
                                 </div>}
                                 <div className="cart__item__image">
                                     <img
-                                        src={`http://localhost:8000/public/${props.imgName}`}
+                                        src={`${props.imgName}`}
                                         alt=""
                                     />
                                 </div>

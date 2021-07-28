@@ -29,9 +29,9 @@ const Carousel = (props) => {
         const { images } = props
         textureLoader = new TextureLoader();
         if (images) {
-            image1 = textureLoader.load(`http://localhost:8000/public/${images[0]?.img}`);
-            image2 = textureLoader.load(`http://localhost:8000/public/${images[1]?.img}`);
-            image3 = textureLoader.load(`http://localhost:8000/public/${images[2]?.img}`);
+            image1 = textureLoader.load(`${images[0]?.img}`);
+            image2 = textureLoader.load(`${images[1]?.img}`);
+            image3 = textureLoader.load(`${images[2]?.img}`);
         }
     }
 

@@ -153,10 +153,6 @@ class Category extends Component {
      * Resize.
      */
     onResize = () => {
-        // this.screen = {
-        //     height: window.innerHeight,
-        //     width: window.innerWidth
-        // }
         const { offsetWidth: cWidth, offsetHeight: cHeight } =
             this.containerRef.current;
         this.screen = {
@@ -293,11 +289,12 @@ class Category extends Component {
                         <div ref={this.reff} className="demo-1__gallery">
                             {this.props?.category?.categories?.map(cat => {
                                 return cat?.categoryImage?.map((image, idx) => {
+                                    console.log(image.img);
                                     return (
                                         <figure
                                             data-link={`/${cat.slug}?cid=${cat._id}&type=${cat.type}`}
                                             key={idx} className="demo-1__gallery__figure">
-                                            <img className="demo-1__gallery__image" src={`http://localhost:8000/public/${image.img}`} alt="img" />
+                                            <img className="demo-1__gallery__image" src={image.img} alt="img" />
                                         </figure>
                                     )
                                 })

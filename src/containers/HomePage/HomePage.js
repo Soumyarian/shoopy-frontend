@@ -31,8 +31,8 @@ const HomePage = () => {
     const { imgone, imgtwo } = e.target.dataset;
     const tl = gsap.timeline();
     tl
-      .set(imageLRef.current, { backgroundImage: `url("http://localhost:8000/public/${imgone}")` })
-      .set(imageSRef.current, { backgroundImage: `url("http://localhost:8000/public/${imgtwo}")` })
+      .set(imageLRef.current, { backgroundImage: `url(${imgone})` })
+      .set(imageSRef.current, { backgroundImage: `url("${imgtwo}")` })
       .to([imageCLRef.current, imageCSRef.current], { duration: 1, autoAlpha: 1 })
       .to(e.target, { color: "#fff", autoAlpha: 1 }, 0)
       .to(portfolioRef.current, { backgroundColor: "#000" }, 0)
@@ -50,11 +50,11 @@ const HomePage = () => {
     const imageContainerHeight = portfolioRef.current.querySelector(".category__showcase__categories").clientHeight;
     gsap.to(imageCLRef.current, {
       duration: 1.2,
-      y: -(imageContainerHeight - clientY) / 4,
+      y: (imageContainerHeight - clientY) / 6,
     })
     gsap.to(imageCSRef.current, {
       duration: 1.5,
-      y: -(imageContainerHeight - clientY) / 3,
+      y: (imageContainerHeight - clientY) / 6,
     })
   }
 
