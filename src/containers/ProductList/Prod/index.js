@@ -45,7 +45,7 @@ const Prod = (props) => {
                         <td className="cart__item__partOne">
                           <div className="cart__item__image">
                             <img
-                              src={`http://localhost:8000/public/${prod.productPictures[0].img}`}
+                              src={`${prod.productPictures[0].img}`}
                               alt=""
                             />
                           </div>
