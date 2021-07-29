@@ -1,0 +1,4 @@
+/Apple?cid=6100e51ea480376578b04539&type=page
+4index.js:292 /Samsung?cid=6100e628a480376578b04542&type=store
+2index.js:292 /Men-Clothing?cid=6100e63fa480376578b04548&type=product
+2index.js:292 /Women-Clothing?cid=6100e669a480376578b0454f&type=product

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { WebGLRenderer, PerspectiveCamera, Scene, PlaneBufferGeometry, Clock, Raycaster, Vector2 } from "three";
 import NormalizeWheel from 'normalize-wheel'
-import { connect } from 'react-redux';
 
 import Media from './Media'
-import { getAllCategory } from '../../store/actions';
 import './Category.scss';
 
 class Category extends Component {
@@ -24,9 +22,6 @@ class Category extends Component {
         this.mouse = new Vector2();
         this.intersectionObjects = [];
         this.currentIntersection = null;
-    }
-    componentDidMount = () => {
-        this.props.getCategories();
     }
 
     componentWillUnmount = () => {
@@ -50,22 +45,20 @@ class Category extends Component {
         this.gl.dispose();
     }
 
-    componentDidUpdate = (prevProps) => {
-        if (this.props.category.categories !== prevProps.category.categories) {
-            this.createRenderer()
-            this.createScene()
-            this.createCamera()
-            this.createGallery()
+    componentDidMount = () => {
+        this.createRenderer()
+        this.createScene()
+        this.createCamera()
+        this.createGallery()
 
-            this.onResize()
+        this.onResize()
 
-            this.createGeometry()
-            this.createMedias()
+        this.createGeometry()
+        this.createMedias()
 
-            this.animate()
+        this.animate()
 
-            this.addEventListeners()
-        }
+        this.addEventListeners()
     }
 
 
@@ -260,17 +253,6 @@ class Category extends Component {
                         <div className="demo-1__header">
                             <div className="container">
                                 <div className="demo-1__desc">
-                                    {/* {
-                                        this.props?.category?.categories?.map((cat, idx) => {
-                                            return (
-                                                // <Link to={`/${cat.slug}?cid=${cat._id}&type=${cat.type}`}>
-                                                // <div key={idx}>
-                                                //     {cat.name}
-                                                // </div>
-                                                // </Link>
-                                            )
-                                        })
-                                    } */}
                                     <h1>
                                         <span>C</span>
                                         <span>A</span>
@@ -287,17 +269,66 @@ class Category extends Component {
                             </div>
                         </div>
                         <div ref={this.reff} className="demo-1__gallery">
-                            {this.props?.category?.categories?.map(cat => {
-                                return cat?.categoryImage?.map((image, idx) => {
-                                    return (
-                                        <figure
-                                            data-link={`/${cat.slug}?cid=${cat._id}&type=${cat.type}`}
-                                            key={idx} className="demo-1__gallery__figure">
-                                            <img className="demo-1__gallery__image" src={image.img} alt="img" />
-                                        </figure>
-                                    )
-                                })
-                            })}
+                            <figure
+                                data-link="/Apple?cid=6100e51ea480376578b04539&type=page"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/apple1.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Apple?cid=6100e51ea480376578b04539&type=page"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/apple4.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Men-Clothing?cid=6100e63fa480376578b04548&type=product"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/mens1.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Samsung?cid=6100e628a480376578b04542&type=store"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/samsung4.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Women-Clothing?cid=6100e669a480376578b0454f&type=product"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/women1.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Samsung?cid=6100e628a480376578b04542&type=store"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/samsung1.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Samsung?cid=6100e628a480376578b04542&type=store"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/samsung2.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Apple?cid=6100e51ea480376578b04539&type=page"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/apple3.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Men-Clothing?cid=6100e63fa480376578b04548&type=product"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/mens2.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Samsung?cid=6100e628a480376578b04542&type=store"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/samsung3.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Apple?cid=6100e51ea480376578b04539&type=page"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/apple2.jpg" alt="img" />
+                            </figure>
+                            <figure
+                                data-link="/Women-Clothing?cid=6100e669a480376578b0454f&type=product"
+                                className="demo-1__gallery__figure">
+                                <img className="demo-1__gallery__image" src="/shop_images/women2.jpg" alt="img" />
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -306,15 +337,4 @@ class Category extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        category: state.categories
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return {
-        getCategories: () => dispatch(getAllCategory())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default Category;

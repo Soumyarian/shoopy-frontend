@@ -56,7 +56,7 @@ img {
       transform: translateY(0);
     }
     @media (max-width: 992px) {
-      font-size: 4rem;
+      font-size: 3rem;
     }
   }
   &:hover {
@@ -88,8 +88,8 @@ img {
   position: absolute;
 
   &:nth-child(1) {
-    height: 70em;
-    width: 40em;
+    height: 40em;
+    width: 70em;
   }
 
   &:nth-child(2) {
@@ -100,17 +100,17 @@ img {
   }
 
   &:nth-child(3) {
-    height: 30em;
+    height: 50em;
     left: 15em;
-    top: 75em;
-    width: 50em;
+    top: 60em;
+    width: 60em;
   }
 
   &:nth-child(4) {
-    height: 50em;
+    height: 30em;
     right: 0;
-    top: 0em;
-    width: 30em;
+    top: 10em;
+    width: 50em;
   }
 
   &:nth-child(5) {
@@ -156,10 +156,10 @@ img {
   }
 
   &:nth-child(11) {
-    height: 70em;
-    left: 75em;
+    height: 50em;
+    left: 70em;
     top: 235em;
-    width: 50em;
+    width: 80em;
   }
 
   &:nth-child(12) {
@@ -172,22 +172,23 @@ img {
   @media (max-width: 1200px) {
     &:nth-child(1) {
       height: 60em;
+      left: -20em;
       width: 100em;
     }
 
     &:nth-child(2) {
       height: 110em;
       left: auto;
-      right: 0;
+      right: -10em;
       top: 25em;
       width: 70em;
     }
 
     &:nth-child(3) {
-      height: 80em;
-      left: 12em;
+      height: 89em;
+      left: -10em;
       top: 80em;
-      width: 89em;
+      width: 50em;
     }
 
     &:nth-child(4) {
@@ -221,11 +222,11 @@ img {
     }
 
     &:nth-child(8) {
-      height: 50em;
+      height: 80em;
       left: auto;
-      right: 0;
-      top: 385em;
-      width: 80em;
+      right: 20em;
+      top: 369em;
+      width: 50em;
     }
 
     &:nth-child(9) {
@@ -246,13 +247,13 @@ img {
     &:nth-child(11) {
       height: 70em;
       left: auto;
-      right: 0;
+      right: -10em;
       top: 570em;
       width: 70em;
     }
 
     &:nth-child(12) {
-      left: 0;
+      left: -10em;
       top: 515em;
       height: 100em;
       width: 90em;

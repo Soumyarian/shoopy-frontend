@@ -8,7 +8,7 @@ const CustomCard = (props) => {
     <Link to={props.link}>
       < div className="card_" >
         <div className="card__image__container">
-          <img src={`http://localhost:8000/public/${props.img}`} alt="img" />
+          <img src={`${props.img}`} alt="img" />
         </div>
         <div className="card__details">
           <div className="card__title">

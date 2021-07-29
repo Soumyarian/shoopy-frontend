@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Scene, PerspectiveCamera, WebGLRenderer, PlaneBufferGeometry, ShaderMaterial, TextureLoader, Mesh, Vector2, Clock } from 'three';
+import { Scene, PerspectiveCamera, WebGLRenderer, PlaneBufferGeometry, ShaderMaterial, TextureLoader, Mesh, Vector2, Clock, Texture } from 'three';
 import vertex from './vertex';
 import fragment from './fragment';
 import './carousel.scss'
@@ -30,6 +30,16 @@ const Carousel = (props) => {
     const loadTextures = () => {
         const { images } = props
         textureLoader = new TextureLoader();
+        // const xy = new Image();
+        // xy.src = `${images[0]?.img}`;
+        // xy.onload = () => {
+        //     image1 = new Texture(xy);
+        //     image1.needsUpdate = true;
+        //     plane.material.uniforms.image.value = image1
+        //     console.log(image1);
+
+        // }
+        // console.log(xy);
         if (images) {
             image1 = textureLoader.load(`${images[0]?.img}`);
             image2 = textureLoader.load(`${images[1]?.img}`);

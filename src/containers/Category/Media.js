@@ -16,11 +16,13 @@ class Media {
 
         this.createMesh()
         this.createBounds()
+
     }
+
 
     createMesh = () => {
         const textureLoader = new TextureLoader();
-        textureLoader.setCrossOrigin("https://shoppy-bucket.s3.ap-south-1.amazonaws.com");
+
         const material = new ShaderMaterial({
             fragmentShader: `
             precision highp float;
