@@ -41,7 +41,7 @@ class Category extends Component {
             media.plane.material.dispose();
             media.plane.geometry.dispose();
         })
-        this.containerRef.current.removeChild(this.gl.domElement);
+        this.gl.domElement.remove();
         this.gl.dispose();
     }
 
@@ -120,7 +120,7 @@ class Category extends Component {
     }
 
     onTouchMove = (event) => {
-        const x = event.touches ? event.touches[0].clientY : event.clientY;
+        const x = event.touches ? event.touches[0].clientX : event.clientX;
         const y = event.touches ? event.touches[0].clientY : event.clientY;
         this.mouse.x = ((x / window.innerWidth) * 2.0) - 1.0;
         this.mouse.y = -(((y / window.innerHeight) * 2.0) - 1.0);

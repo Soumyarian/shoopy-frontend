@@ -26,7 +26,8 @@ const ProductStore = (props) => {
         </div>
         {allProducts.productsByPrice && Object.keys(allProducts.productsByPrice).map((key, index) => {
           return (
-            <ProductRow title="products" subTitle={key} key={index}>
+            <ProductRow title="products" subTitle={key} key={index}
+              link="/Samsung?cid=6100e628a480376578b04542&type=product">
               {allProducts.productsByPrice[key].map((prod, ind) => {
                 return (
                   <CustomCard
