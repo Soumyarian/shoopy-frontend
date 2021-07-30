@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from 'gsap';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCategory } from './../../store/actions/';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import HomeBanner from "../../components/HomeBanner";
 import Layout from "./../../components/Layout/Layout";
@@ -40,9 +40,9 @@ const HomePage = () => {
   const mouseLeaveHandler = () => {
     const tl = gsap.timeline();
     tl
-      .to([imageCLRef.current, imageCSRef.current], { autoAlpha: 0 })
-      .to(homeSectionLinkRef.current, { color: "#1c1b1b", autoAlpha: 1 }, 0)
-      .to(portfolioRef.current, { backgroundColor: "#efefef" }, 0)
+      .to([imageCLRef.current, imageCSRef.current], { autoAlpha: 0, delay: 0.5 })
+      .to(homeSectionLinkRef.current, { color: "#1c1b1b", autoAlpha: 1, delay: 0.5 })
+      .to(portfolioRef.current, { backgroundColor: "#efefef", delay: 0.5 })
   }
 
   const mouseMoveHandler = (e) => {
@@ -113,7 +113,7 @@ const HomePage = () => {
               {
                 category?.categories?.map((cat, idx) => {
                   return (
-                    <Link
+                    <NavLink
                       key={idx}
                       to={`/${cat.slug}?cid=${cat._id}&type=${cat.type}`}
                       data-imgone={cat.categoryImage[0].img}
@@ -125,7 +125,7 @@ const HomePage = () => {
                       data-color="#b3a8b3"
                     >
                       {cat.name}
-                    </Link>
+                    </NavLink>
                   )
                 })
               }

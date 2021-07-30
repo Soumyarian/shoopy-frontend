@@ -120,11 +120,12 @@ class Category extends Component {
     }
 
     onTouchMove = (event) => {
-        this.mouse.x = ((event.pageX / window.innerWidth) * 2.0) - 1.0;
-        this.mouse.y = -(((event.pageY / window.innerHeight) * 2.0) - 1.0);
+        const x = event.touches ? event.touches[0].clientY : event.clientY;
+        const y = event.touches ? event.touches[0].clientY : event.clientY;
+        this.mouse.x = ((x / window.innerWidth) * 2.0) - 1.0;
+        this.mouse.y = -(((y / window.innerHeight) * 2.0) - 1.0);
         if (!this.isDown) return
 
-        const y = event.touches ? event.touches[0].clientY : event.clientY
         const distance = (this.start - y) * 2
 
         this.scroll.target = this.scroll.position + distance
@@ -181,7 +182,6 @@ class Category extends Component {
     onClick = () => {
         if (this.currentIntersection) {
             if (this.props.location.pathname) {
-
                 this.props.history.push(this.currentIntersection.object.userData.link)
             }
         }

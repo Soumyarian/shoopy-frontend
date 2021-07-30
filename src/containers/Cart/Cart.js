@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import Layout from "./../../components/Layout/Layout";
@@ -75,11 +75,11 @@ const Cart = (props) => {
               </h3>
             </div>
 
-            <Link to={isEmpty ? "#" : "/checkout"}>
+            <NavLink to={isEmpty ? "#" : "/checkout"}>
               <button>
                 Place Order
               </button>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

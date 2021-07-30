@@ -13,12 +13,20 @@
     height: 100%;
     .carousel_root {
       height: 100%;
-      height: 100%;
     }
   }
   .page__banner__container {
-    display: flex;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
     @media (max-width: 992px) {
+      display: flex;
       flex-direction: column;
     }
   }

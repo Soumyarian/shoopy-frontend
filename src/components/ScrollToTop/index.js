@@ -10,7 +10,6 @@ function ScrollToTop({ history }) {
             unlisten();
         }
     }, []);
-
     return (null);
 }
 

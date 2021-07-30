@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { getProductPage } from '../../../store/actions';
 import './ProductPage.scss';
@@ -34,9 +34,9 @@ const ProductPage = (props) => {
                     style={{ position: "relative" }}>
                     {page?.banners && page?.banners.map((banner, index) => (
                         <div key={index}>
-                            <Link to={`/${page?.title}?cid=${page?.category}&type=`}>
-                                <img className="d-block w-100" src={`http://localhost:8000${banner?.img}`} alt="img" />
-                            </Link>
+                            <NavLink to={`/${page?.title}?cid=${page?.category}&type=`}>
+                                <img className="d-block w-100" src={`${banner?.img.slice(8)}`} alt="img" />
+                            </NavLink>
                         </div>
                     ))}
 
@@ -44,9 +44,9 @@ const ProductPage = (props) => {
             </div>
             <div className="page__banner__container">
                 {page.products && page.products.map((prod, index) => (
-                    <Link key={index} to={`/${page.title}?cid=${page.category}&type=`}>
-                        <img className="d-block w-100" src={`http://localhost:8000${prod?.img}`} alt="img" />
-                    </Link>
+                    <NavLink key={index} to={`/${page.title}?cid=${page.category}&type=`}>
+                        <img src={`${prod?.img.slice(8)}`} alt="img" />
+                    </NavLink>
                 ))}
             </div>
 

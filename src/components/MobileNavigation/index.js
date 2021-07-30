@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./MobileNavigation.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from './../../store/actions';
@@ -14,7 +14,7 @@ const MobileNavigation = ({ closeMobileNav }) => {
             </div>
             <div className="mobile__navigation__header">
                 <div className="mobile__navigation__brand">
-                    <Link to="/">ShoppY!</Link>
+                    <NavLink to="/">ShoppY!</NavLink>
                 </div>
                 <div onClick={closeMobileNav} className="mobile__navigation__closebtn">
                     <span></span>
@@ -24,10 +24,10 @@ const MobileNavigation = ({ closeMobileNav }) => {
 
             <ul className="mobile__navigation__nav">
                 <li>
-                    <Link to="/"> home</Link>
+                    <NavLink to="/"> home</NavLink>
                 </li>
                 <li>
-                    <Link to="/categories">categories</Link>
+                    <NavLink to="/categories">categories</NavLink>
                 </li>
                 {
                     auth.authenticated ?
@@ -36,30 +36,30 @@ const MobileNavigation = ({ closeMobileNav }) => {
                         </li>
                         :
                         <li>
-                            <Link to="/login">SignIn</Link>
+                            <NavLink to="/login">SignIn</NavLink>
                         </li>
                 }
                 {
                     !auth.authenticated && (
                         <li>
-                            <Link to="/signup">Signup</Link>
+                            <NavLink to="/signup">Signup</NavLink>
                         </li>
                     )
                 }
                 {
                     auth.authenticated && (
                         <li>
-                            <Link to="/orders">Orders</Link>
+                            <NavLink to="/orders">Orders</NavLink>
                         </li>
                     )
                 }
                 <li>
-                    <Link to="/cart">Cart</Link>
+                    <NavLink to="/cart">Cart</NavLink>
                 </li>
                 {
                     auth.authenticated && (
                         <li>
-                            <Link to="#" onClick={() => dispatch(logout())}>Logout</Link>
+                            <NavLink to="#" onClick={() => dispatch(logout())}>Logout</NavLink>
                         </li>
                     )
                 }

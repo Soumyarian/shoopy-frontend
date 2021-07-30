@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./CustomCard.scss";
 import { BiRupee } from 'react-icons/bi'
 
 const CustomCard = (props) => {
   return (
-    <Link to={props.link}>
-      < div className="card_" >
+    <NavLink to={props.link}>
+      <div className="card_" >
         <div className="card__image__container">
           <img src={`${props.img}`} alt="img" />
         </div>
@@ -20,7 +20,7 @@ const CustomCard = (props) => {
           </div>
         </div>
       </div >
-    </Link>
+    </NavLink>
   );
 };
 

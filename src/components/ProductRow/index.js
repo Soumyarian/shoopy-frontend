@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./ProductRow.scss";
 
 const ProductRow = ({ children, title, subTitle, link }) => {
@@ -13,9 +13,9 @@ const ProductRow = ({ children, title, subTitle, link }) => {
               <h3>{subTitle}</h3>
             </div>
             <div className="content__section__link">
-              <Link to={link}>
+              <NavLink to={link ? link : "/"}>
                 <button>view all</button>
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>

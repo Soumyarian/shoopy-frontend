@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout';
 import "./ThankYouPage.scss";
 import { staggerChild, revealText } from '../../helpers/animation';
@@ -35,9 +35,9 @@ const ThankYou = () => {
                         <div className="desc__container">
                             <h3 ref={descRef}>Keep Shopping With Us</h3>
                         </div>
-                        <Link to="/">
+                        <NavLink to="/">
                             <button>Return To Home</button>
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
             </div>

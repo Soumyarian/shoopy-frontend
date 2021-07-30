@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import Spinner from "../UI/Spinner";
 import "./Auth.scss";
 
-const Auth = ({ title, loading, submitHandler, children }) => {
+const Auth = ({ title, loading, submitHandler, children, goToText, goToLink }) => {
 
   return (
     <Layout>
@@ -17,13 +18,16 @@ const Auth = ({ title, loading, submitHandler, children }) => {
             {loading ? (
               <Spinner />
             ) : (
-              <div className="auth__inputs">
-                <h2>{title}</h2>
-                <form onSubmit={submitHandler}>
-                  {children}
-                  <button type="submit">{title}</button>
-                </form>
-              </div>
+              <>
+                <div className="auth__inputs">
+                  <h2>{title}</h2>
+                  <form onSubmit={submitHandler}>
+                    {children}
+                    <button type="submit">{title}</button>
+                  </form>
+                  <NavLink to={goToLink}>{goToText}</NavLink>
+                </div>
+              </>
             )}
           </div>
         </div>

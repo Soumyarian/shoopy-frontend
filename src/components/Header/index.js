@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.scss";
 import gsap from 'gsap';
@@ -34,7 +34,7 @@ const Header = () => {
     <nav>
       <div ref={headerRef} className="header__container">
         <div className="header__brand">
-          <Link to="/">ShoppY!</Link>
+          <NavLink to="/">ShoppY!</NavLink>
         </div>
 
         <div
@@ -48,75 +48,75 @@ const Header = () => {
 
         <ul className="header__navList">
           <li>
-            <Link
+            <NavLink
               onMouseLeave={() => mouseLeave(0)}
               ref={(el) => { navigationLinkRef.current[0] = el }}
               to="/"
             >
               home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               onMouseLeave={() => mouseLeave(1)}
               ref={(el) => { navigationLinkRef.current[1] = el }}
               to="/categories"
             >
               categories
-            </Link>
+            </NavLink>
           </li>
           {auth.authenticated ? <li>
-            <Link
+            <NavLink
               onMouseLeave={() => mouseLeave(2)}
               ref={(el) => { navigationLinkRef.current[2] = el }}
               to="/login"
             >
               {auth.user.firstName}
-            </Link>
+            </NavLink>
           </li>
             :
             <li>
-              <Link
+              <NavLink
                 onMouseLeave={() => mouseLeave(2)}
                 ref={(el) => { navigationLinkRef.current[2] = el }}
                 to="/login"
               >
                 SignIn
-              </Link>
+              </NavLink>
             </li>}
           {!auth.authenticated && (<li>
-            <Link
+            <NavLink
               onMouseLeave={() => mouseLeave(3)}
               ref={(el) => { navigationLinkRef.current[3] = el }}
               to="/signup"
             >
               Signup
-            </Link>
+            </NavLink>
           </li>
           )}
           {auth.authenticated && (<li>
-            <Link
+            <NavLink
               onMouseLeave={() => mouseLeave(4)}
               ref={(el) => { navigationLinkRef.current[4] = el }}
               to="/orders"
             >
               Orders
-            </Link>
+            </NavLink>
           </li>
           )}
           <li>
-            <Link
+            <NavLink
               onMouseLeave={() => mouseLeave(5)}
               ref={(el) => { navigationLinkRef.current[5] = el }}
               to="/cart"
               onClick={() => dispatch(logout())}
             >
               Cart
-            </Link>
+            </NavLink>
           </li>
           {
             auth.authenticated && (<li>
-              <Link
+              <NavLink
                 onMouseLeave={() => mouseLeave(6)}
                 ref={(el) => { navigationLinkRef.current[6] = el }}
                 to="#"
@@ -124,7 +124,7 @@ const Header = () => {
               >
 
                 Logout
-              </Link>
+              </NavLink>
             </li>)
           }
         </ul>

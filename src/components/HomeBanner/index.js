@@ -11,7 +11,7 @@ import {
     OrthographicCamera,
     Vector4
 } from "three";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './HomeBanner.scss';
 
 
@@ -234,9 +234,9 @@ export class HomeBanner extends Component {
                     <div className="home__banner__canvas__title">
                         <h1>Shoppy</h1>
                         <p>The Only Story You Will Ever Need</p>
-                        <Link to="/categories">
+                        <NavLink to="/categories">
                             <button>Explore All</button>
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
             </>

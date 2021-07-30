@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { getAddress, addOrder } from "../../store/actions/index";
@@ -125,9 +125,9 @@ const Checkout = () => {
                     ) : (
                       <>
                         <span>Login to continue further.</span>
-                        <Link to="/login">
+                        <NavLink to="/login">
                           <button>Login</button>
-                        </Link>
+                        </NavLink>
                       </>
                     )}
                   </h3>
@@ -203,9 +203,9 @@ const Checkout = () => {
                     </div>
                     {
                       auth.authenticated && (Object.keys(cart?.cartItems).length > 0) && selectedAddress && (
-                        <Link to="/thankyou">
+                        <NavLink to="/thankyou">
                           <button onClick={onConfirmOrderHandler}>Order now</button>
-                        </Link>
+                        </NavLink>
                       )
                     }
                   </div>

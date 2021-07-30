@@ -59,7 +59,8 @@ const authReducer = (state = initState, action) => {
                 user: null,
                 token: null,
                 authenticated: false,
-                loading: false
+                loading: false,
+                message: "Login Failed Check Your Email and Password"
             }
             break;
         case authConstants.LOGOUT_REQUEST:
@@ -79,6 +80,13 @@ const authReducer = (state = initState, action) => {
                 ...state,
                 error: action.payload.error,
                 loading: false
+            }
+            break;
+        case authConstants.CLEAR_ERROR:
+            state = {
+                ...state,
+                error: null,
+                message: ""
             }
             break;
         default:

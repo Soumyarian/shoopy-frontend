@@ -13,37 +13,36 @@ let image1, image2, image3;
 let nextCurValue, nextNextValue;
 let touchable = true;
 let textureLoader;
+let container;
 const Carousel = (props) => {
-    const container = useRef();
+    container = useRef();
     useEffect(() => {
         loadTextures();
         init();
         animate();
+        onWindowResize();
         return () => {
+            renderer.domElement.remove();
+            image1.dispose();
+            image2.dispose();
+            image3.dispose();
             plane.material.dispose();
             plane.geometry.dispose();
             renderer.dispose();
             window.removeEventListener("resize", onWindowResize)
         }
-    }, [])
+    }, [props.images])
 
     const loadTextures = () => {
         const { images } = props
         textureLoader = new TextureLoader();
-        // const xy = new Image();
-        // xy.src = `${images[0]?.img}`;
-        // xy.onload = () => {
-        //     image1 = new Texture(xy);
-        //     image1.needsUpdate = true;
-        //     plane.material.uniforms.image.value = image1
-        //     console.log(image1);
-
-        // }
-        // console.log(xy);
         if (images) {
-            image1 = textureLoader.load(`${images[0]?.img}`);
             image2 = textureLoader.load(`${images[1]?.img}`);
             image3 = textureLoader.load(`${images[2]?.img}`);
+            image1 = textureLoader.load(`${images[0]?.img}`);
+            if (!image1.image) {
+                image1 = textureLoader.load(`${images[1]?.img}`);
+            }
         }
     }
 
@@ -110,7 +109,6 @@ const Carousel = (props) => {
         scene.add(plane);
 
         window.addEventListener("resize", onWindowResize);
-        onWindowResize();
     }
     const onWindowResize = () => {
         const { offsetWidth: width, offsetHeight: height } =

@@ -30,6 +30,7 @@ export const authConstants = {
     LOGOUT_REQUEST: "LOGOUT_REQUEST",
     LOGOUT_SUCCESS: "LOGOUT_SUCCESS",
     LOGOUT_FAIL: "LOGOUT_FAIL",
+    CLEAR_ERROR: "CLEAR_ERROR"
 }
 
 export const cartConstants = {

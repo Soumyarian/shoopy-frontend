@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import Auth from '../../components/Auth';
 import CustomInput from '../../components/CustomInput';
-import { login } from '../../store/actions';
+import { login, clearError } from '../../store/actions';
 
 
 const SignInPage = () => {
@@ -23,32 +23,39 @@ const SignInPage = () => {
         dispatch(login(user));
     };
     useEffect(() => {
+        dispatch(clearError());
+    }, [])
+    useEffect(() => {
         if (auth.authenticated) {
             history.goBack();
         }
     }, [auth.authenticated, history])
     return (
-        <Auth
-            title="Log In"
-            loading={auth.loading}
-            submitHandler={loginSubmitHandler}
-        >
-            <CustomInput
-                label="Email"
-                type="email"
-                placeholder="User Email"
-                value={email}
-                errorMessage={auth.error && auth.error}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <CustomInput
-                label="Password"
-                type="password"
-                placeholder="User Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-        </Auth>
+        <>
+            <Auth
+                title="Log In"
+                loading={auth.loading}
+                submitHandler={loginSubmitHandler}
+                goToLink="/signup"
+                goToText="Go to sign up"
+            >
+                <CustomInput
+                    label="Email"
+                    type="email"
+                    placeholder="User Email"
+                    value={email}
+                    errorMessage={auth.message && auth.message}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <CustomInput
+                    label="Password"
+                    type="password"
+                    placeholder="User Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </Auth>
+        </>
     )
 }
 

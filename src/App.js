@@ -16,9 +16,7 @@ import Category from './containers/Category';
 import ThankYou from './containers/ThankYouPage';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import ScrollToTop from './components/ScrollToTop'
-
-// const Category = React.lazy(() => import('./containers/Category'));
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const dispatch = useDispatch();

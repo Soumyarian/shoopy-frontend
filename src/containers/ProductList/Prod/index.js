@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsBySlug } from "../../../store/actions";
 import { BiRupee, BiStar } from "react-icons/bi";
 import { staggerChild } from "./../../../helpers/animation";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./ProductList.scss";
 const Prod = (props) => {
   const headerRef = useRef();
@@ -38,7 +38,7 @@ const Prod = (props) => {
           <div className="product__list__container">
             {allProducts?.products?.map((prod, idx) => {
               return (
-                <Link key={idx} to={`/${prod.slug}/${prod._id}/p`}>
+                <NavLink key={idx} to={`/${prod.slug}/${prod._id}/p`}>
                   <div className="cart__content">
                     <div className="cart__item__container">
                       <table>
@@ -86,7 +86,7 @@ const Prod = (props) => {
                       </table>
                     </div>
                   </div>
-                </Link>
+                </NavLink>
               );
             })}
           </div>
